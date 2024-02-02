@@ -64,9 +64,7 @@ public class Main {
         System.out.println("# Single: C-1");
         System.out.println("# Multiple: C-1,C-2 ");
     }
-    public static void bookingInfo(){
-        System.out.print("> Are you sure to book? (Y/n): ");
-        String yesNo = scanner.next().toLowerCase();
+    public static void bookingInfo(String yesNo){
         switch (yesNo){
             case "y":
                 System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
@@ -111,6 +109,7 @@ public class Main {
                     String av;
                     int stdId;
                     String stdIdString;
+                    String yesNo;
                     switch (selectShowTime){
                         case "a":
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
@@ -123,7 +122,9 @@ public class Main {
                             stdId = scanner.nextInt();
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                             stdIdString = String.valueOf(stdId);
-                            bookingInfo();
+                            System.out.print("> Are you sure to book? (Y/n): ");
+                            yesNo = scanner.next().toLowerCase();
+                            bookingInfo(yesNo);
                             break;
                         case "b":
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
@@ -136,7 +137,9 @@ public class Main {
                             stdId = scanner.nextInt();
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                             stdIdString = String.valueOf(stdId);
-                            bookingInfo();
+                            System.out.print("> Are you sure to book? (Y/n): ");
+                            yesNo = scanner.next().toLowerCase();
+                            bookingInfo(yesNo);
                             break;
                         case "c":
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
@@ -149,7 +152,9 @@ public class Main {
                             stdId = scanner.nextInt();
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                             stdIdString = String.valueOf(stdId);
-                            bookingInfo();
+                            System.out.print("> Are you sure to book? (Y/n): ");
+                            yesNo = scanner.next().toLowerCase();
+                            bookingInfo(yesNo);
                             break;
                     }
                     break;
