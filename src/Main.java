@@ -1,7 +1,6 @@
-import java.util.Locale;
 import java.util.Scanner;
-
 public class Main {
+    public static Scanner scanner = new Scanner(System.in);
     public static void welcomeDisplay(){
         System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
         System.out.println("CSTAD HALL BOOKING SYSTEM");
@@ -65,34 +64,44 @@ public class Main {
         System.out.println("# Single: C-1");
         System.out.println("# Multiple: C-1,C-2 ");
     }
-    public static void avSeat(){
-        Scanner scanner = new Scanner(System.in);
+    public static void bookingInfo(){
         System.out.print("> Please select available seat: ");
         String av = scanner.next();
+        System.out.print("> Please enter student ID: ");
+        int stdId = scanner.nextInt();
+        System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+        String stdIdString = String.valueOf(stdId);
+        System.out.print("> Are you sure to book? (Y/n): ");
+        String yesNo = scanner.next().toLowerCase();
+        switch (yesNo){
+            case "y":
+                System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+                System.out.println("Booking Successful!");
+                System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+                break;
+            case "n":
+                System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+                System.out.println("Booking canceled!");
+                System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+                break;
+        }
     }
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
         //Greeting to user
         welcomeDisplay();
-
         //user input to config
         System.out.print("> config total row in hall: ");
         int row = scanner.nextInt();
         System.out.print("> config total seats per row in hall: ");
         int column = scanner.nextInt();
-
         //Menu
         String option;
         do{
             //Menu list
             menuDisplay();
-
             //select menu
             System.out.print("> Please select menu no: ");
             option = scanner.next().toLowerCase();
-
             //switch case
             switch (option){
                 case "a":
@@ -109,27 +118,23 @@ public class Main {
                         case "a":
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                             System.out.println("# Hall A");
-                            //array of rowSeat
                             morningSeat(row,column);
                             instructionDisplay();
-                            avSeat();
+                            bookingInfo();
                             break;
                         case "b":
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                             System.out.println("# Hall B");
-                            //array of rowSeat
                             afternoonSeat(row,column);
                             instructionDisplay();
-                            avSeat();
-
+                            bookingInfo();
                             break;
                         case "c":
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                             System.out.println("# Hall C");
-                            //array of rowSeat
                             nightSeat(row,column);
                             instructionDisplay();
-                            avSeat();
+                            bookingInfo();
                             break;
                     }
                     break;
