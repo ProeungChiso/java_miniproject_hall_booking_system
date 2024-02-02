@@ -67,6 +67,7 @@ public class Main {
     public static void bookingInfo(String yesNo){
         switch (yesNo){
             case "y":
+
                 System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                 System.out.println("Booking Successful!");
                 System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
@@ -77,6 +78,16 @@ public class Main {
                 System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                 break;
         }
+    }
+    public static void displayBookingHistory() {
+        System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+        System.out.println("# Booking History!");
+        System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+    }
+    public static void reboot(){
+        System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+        System.out.println("# Reboot!");
+        System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
     }
     public static void main(String[] args) {
         //Greeting to user
@@ -173,10 +184,10 @@ public class Main {
                     dailyShowtime();
                     break;
                 case "d":
-                    System.out.println("D");
+                    reboot();
                     break;
                 case "e":
-                    System.out.println("E");
+                    displayBookingHistory();
                     break;
                 case "f":
                     System.out.println("Exit the program...!!");
