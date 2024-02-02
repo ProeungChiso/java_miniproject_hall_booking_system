@@ -65,12 +65,6 @@ public class Main {
         System.out.println("# Multiple: C-1,C-2 ");
     }
     public static void bookingInfo(){
-        System.out.print("> Please select available seat: ");
-        String av = scanner.next();
-        System.out.print("> Please enter student ID: ");
-        int stdId = scanner.nextInt();
-        System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
-        String stdIdString = String.valueOf(stdId);
         System.out.print("> Are you sure to book? (Y/n): ");
         String yesNo = scanner.next().toLowerCase();
         switch (yesNo){
@@ -114,12 +108,21 @@ public class Main {
                     System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                     System.out.print("> Please select show time ( A | B| C ) : ");
                     String selectShowTime = scanner.next().toLowerCase();
+                    String av;
+                    int stdId;
+                    String stdIdString;
                     switch (selectShowTime){
                         case "a":
                             System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                             System.out.println("# Hall A");
                             morningSeat(row,column);
                             instructionDisplay();
+                            System.out.print("> Please select available seat: ");
+                            av = scanner.next();
+                            System.out.print("> Please enter student ID: ");
+                            stdId = scanner.nextInt();
+                            System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+                            stdIdString = String.valueOf(stdId);
                             bookingInfo();
                             break;
                         case "b":
@@ -127,6 +130,12 @@ public class Main {
                             System.out.println("# Hall B");
                             afternoonSeat(row,column);
                             instructionDisplay();
+                            System.out.print("> Please select available seat: ");
+                            av = scanner.next();
+                            System.out.print("> Please enter student ID: ");
+                            stdId = scanner.nextInt();
+                            System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+                            stdIdString = String.valueOf(stdId);
                             bookingInfo();
                             break;
                         case "c":
@@ -134,6 +143,12 @@ public class Main {
                             System.out.println("# Hall C");
                             nightSeat(row,column);
                             instructionDisplay();
+                            System.out.print("> Please select available seat: ");
+                            av = scanner.next();
+                            System.out.print("> Please enter student ID: ");
+                            stdId = scanner.nextInt();
+                            System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+                            stdIdString = String.valueOf(stdId);
                             bookingInfo();
                             break;
                     }
