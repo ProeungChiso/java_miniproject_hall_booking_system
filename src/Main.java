@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
@@ -67,7 +68,6 @@ public class Main {
     public static void bookingInfo(String yesNo){
         switch (yesNo){
             case "y":
-
                 System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
                 System.out.println("Booking Successful!");
                 System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
